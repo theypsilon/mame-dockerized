@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
+    - uses: pierotofy/set-swap-space@master
+      with:
+        swap-size-gb: 10
 
     - uses: actions/checkout@v2
   
