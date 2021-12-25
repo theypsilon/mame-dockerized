@@ -1,0 +1,17 @@
+name: Build
+
+on:
+  push:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+
+    - uses: actions/checkout@v2
+  
+    - name: docker build
+      run: |
+        docker build --build-arg MAME_VERSION=0227 -t delme .
