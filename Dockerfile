@@ -20,5 +20,8 @@ RUN curl \
   && mv /tmp/mame-mame${MAME_VERSION} /build \
   && rm /tmp/mame.zip
 RUN cd /build && \
-    make
+    QT_SELECT=qt5 make \
+    NOWERROR=1 \
+    TOOLS=1 \
+    -j5
 
